@@ -1,0 +1,9 @@
+.center-fix{
+    
+height: 900px;
+ display: flex;
+ position: relative;
+ top: 50%;
+justify-content: center;
+align-items: center;
+}

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Firebase-Login</string>
+    <string name="title_activity_main">Firebase-Login</string>
+    <string name="package_name">com.arunsahooxt.app</string>
+    <string name="custom_url_scheme">com.arunsahooxt.app</string>
+</resources>

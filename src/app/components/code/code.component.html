@@ -1,0 +1,3 @@
+<p>Enter the OTP sent to <b>{{data.phoneNumber}}</b></p>
+<ng-otp-input (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+<button class="btn btn-success mt-4" (click)="handleClick()">Verify</button>
