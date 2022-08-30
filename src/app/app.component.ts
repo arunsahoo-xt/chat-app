@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './services/authentication.service';
+import { UsersService } from './services/users.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,11 @@ import { AuthenticationService } from './services/authentication.service';
 })
 export class AppComponent {
   title = 'firebase-login';
-  constructor(public authService:AuthenticationService,public router:Router){}
+  user$=this.userService.currentUserProfile$;
+  constructor(
+    public authService:AuthenticationService,
+    public router:Router,
+    private userService:UsersService){}
   logout(){
     this.authService.logout().subscribe(()=>{
       this.router.navigate([''])

@@ -7,6 +7,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { UsersService } from 'src/app/services/users.service';
+import { switchMap } from 'rxjs';
 
 var config = {
   projectId: 'fir-login-ed498',
@@ -53,7 +55,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private authService:AuthenticationService,
     private toast:HotToastService,
-    private router:Router
+    private router:Router,
+    private userService:UsersService
   ) { }
 
   ngOnInit(): void {
@@ -85,7 +88,8 @@ export class SignupComponent implements OnInit {
         // console.log(res);
         // localStorage.setItem('user_data',JSON.stringify(res));
         // this.router.navigate(['/dashboard'])
-        this.authService.signup(name!,email!,password!).pipe(
+        this.authService.signup(email as string,password!).pipe(
+     switchMap(({user:{uid}})=>this.userService.addUser({uid , email:email!, displayName:name! })),
             this.toast.observe({
               success:"Sign Up Success..",
               loading:"Loading...",

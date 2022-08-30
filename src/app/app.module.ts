@@ -19,7 +19,6 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
 import {MatMenuModule} from '@angular/material/menu';
-import { CodeComponent } from './components/code/code.component';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -33,7 +32,6 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    CodeComponent,
     ProfileComponent
   ],
   imports: [
