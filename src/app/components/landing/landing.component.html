@@ -1,4 +1,12 @@
-<div class="center-fix">
-    <div> <h2 >Welcome !</h2></div>
-   
+<div class="overlayy">
+    <div class=" center">
+        <img [ngClass]="{'splashImg':!splashActive}" style="width: 100%; height:auto;" src="assets/splashScreen.png">
+    </div>
+    <div class="form-container">
+        <div class="center">
+            <img class="" style="width: 90%; height:auto;" src="assets/landing-img.jpg">
+        </div>
+        <button class="btn-blue" mat-flat-button routerLink="login">Get Started</button>
+        
+    </div>
 </div>

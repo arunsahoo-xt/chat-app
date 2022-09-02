@@ -1,9 +1,19 @@
-.center-fix{
-    
-height: 900px;
- display: flex;
- position: relative;
- top: 50%;
-justify-content: center;
-align-items: center;
+.overlayy{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100%;
 }
+.splashImg{
+    display: none;
+}
+.btn-blue{
+    margin-top: 30px;
+    background-color:#0d6efd;
+    color: white;
+    width: 100%;
+    border-radius: 15px;
+   
+}
+

@@ -1,19 +1,30 @@
+<div class="form-container">
 
-<div class="form-container mat-elevation-z5" ><h3 class="text-center">Login</h3>
-<form [formGroup]="loginForm" (ngSubmit)="submit()">
-    <mat-form-field >
-        <input matInput placeholder="Email address" formControlName="email" autocomplete="off"/>
-        <mat-error *ngIf="email?.errors?.['required']">Email is Required</mat-error>
-        <mat-error *ngIf="email?.errors?.['email']">Please enter a correct Email Format</mat-error>
-    </mat-form-field>
-<mat-form-field>    
-        <input matInput placeholder="Password" type="password" formControlName="password" />
-        <mat-error *ngIf="password?.errors?.['required']">Password is Required</mat-error>
-    </mat-form-field>
-    <div class="center margin-top">
-        <button mat-raised-button type="submit"> Login</button>
-    </div>
-    <div class="center margin-top">  
-    <span class="h6">New To Our Platform ?<a class="signup-link" [routerLink]="['/signup']"> Sign Up</a></span>
-    </div>
-</form></div>
+    <h1 class="m-0">Welcome Back,<br><b>User</b></h1>
+    <p class="pb-1">Hope you are doing great?</p>
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <mat-form-field>
+            <mat-label>
+                <mat-icon>mail</mat-icon> Email Address
+            </mat-label>
+            <input matInput placeholder="Email address" formControlName="email" autocomplete="off" />
+            <mat-error *ngIf="email?.errors?.['required']">Email is Required</mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">Please enter a correct Email Format</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>
+                <mat-icon>lock</mat-icon> Password
+            </mat-label>
+            <input matInput placeholder="Password" type="password" formControlName="password" />
+            <mat-error *ngIf="password?.errors?.['required']">Password is Required</mat-error>
+        </mat-form-field>
+        <div class="center margin-top">
+            <button class="btn-blue" mat-flat-button type="submit"> Login</button>
+        </div>
+        <div class="center margin-top">
+            <button class="btn-white" mat-flat-button [routerLink]="['/signup']"> Sign Up</button>
+        </div>
+    </form>
+</div>

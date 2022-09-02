@@ -7,8 +7,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-import { UsersService } from 'src/app/services/users.service';
 import { switchMap } from 'rxjs';
+import { UsersService } from 'src/app/services/users.service';
 
 var config = {
   projectId: 'fir-login-ed498',
@@ -45,7 +45,6 @@ export class SignupComponent implements OnInit {
 
   signupForm=new FormGroup({
     name:new FormControl('',Validators.required),
-    phoneNumber:new FormControl('+91',Validators.required),
     email:new FormControl('',[Validators.required,Validators.email]),
     password:new FormControl('',Validators.required),
     cpassword:new FormControl('',Validators.required),
@@ -78,12 +77,13 @@ export class SignupComponent implements OnInit {
   get cpassword(){
     return this.signupForm.get('cpasswrod');
   }
+ 
   submit(){
     if(!this.signupForm.valid){
       return;
     }
     else{
-      const{name,phoneNumber,email,password,cpassword}=this.signupForm.value;
+      const{name,email,password,cpassword}=this.signupForm.value;
     
         // console.log(res);
         // localStorage.setItem('user_data',JSON.stringify(res));
@@ -98,7 +98,8 @@ export class SignupComponent implements OnInit {
           ).subscribe(()=>{
             this.router.navigate(['/home'])
           })
-          
+
+
 
 
 // this.authService.signup(name!,email!,password!).pipe(

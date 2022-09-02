@@ -1,0 +1,29 @@
+mat-toolbar{
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 100% !important;
+}
+/* .content{
+    padding: 32px ;
+} */
+dashboard-container{
+    
+}
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 100% !important;
+}
+.content{
+    margin-top: 16px;;
+    padding: 16px;;
+}
+.profile-image-toolbar{
+    border-radius: 100%;
+    margin-right: 8px;;
+}

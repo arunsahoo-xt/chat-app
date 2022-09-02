@@ -1,0 +1,52 @@
+<!-- <div class="dashboard-container ">
+    <mat-toolbar  >
+      DashBoard
+      
+        <button mat-button [matMenuTriggerFor]="userMenu">
+          <mat-icon>account_circle</mat-icon>
+          
+        
+        <mat-icon>expand_more</mat-icon></button>
+      
+      
+    
+    </mat-toolbar>
+    <div class="content">
+<app-home></app-home>
+
+        <mat-menu #userMenu="matMenu">
+            <button mat-menu-item (click)="logout()">Logout</button>
+          </mat-menu>
+          </div>
+          </div> -->
+
+          <div class="dashboard-container">
+            <mat-toolbar >
+              Chatzzey
+              <ng-container *ngIf="user$ | async as user; else loginButton">
+                <button mat-button [matMenuTriggerFor]="userMenu">
+                  <img class="profile-image-toolbar" width="30" height="30" [src]="user.photoURL ?? '/assets/image-placeholder.png'">
+                  {{user.displayName}}
+                
+                <mat-icon>expand_more</mat-icon>
+              </button>
+              </ng-container>
+              <ng-template #loginButton>
+                <button mat-button routerLink="login">
+                  <mat-icon>login</mat-icon>
+                  Login
+                </button>
+              </ng-template>
+            
+            </mat-toolbar>
+            <div >
+           <!-- <app-home></app-home> -->
+            <mat-menu #userMenu="matMenu">
+              <button mat-menu-item [routerLink]="['/dashboard', {outlets: {'db': ['home']}}]">Home</button>
+              <button mat-menu-item [routerLink]="['/dashboard', {outlets: {'db': ['profile']}}]">Profile</button>
+              <button mat-menu-item (click)="logout()">Logout</button>
+             
+            </mat-menu>
+            <router-outlet  name="db"></router-outlet>
+            </div>
+            </div> -->
